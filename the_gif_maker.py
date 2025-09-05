@@ -10,7 +10,7 @@ max_radius = int(center * 1.5)
 step = 8
 
 for i in range(0, max_radius, step):
-    im = Image.new('RGB', (width, width), color_2)
+    im = Image.new("RGB", (width, width), color_2)
     draw = ImageDraw.Draw(im)
     draw.ellipse((center - i, center - i,
                   center + i, center + i),
@@ -18,7 +18,7 @@ for i in range(0, max_radius, step):
     images.append(im)
 
 # Save the GIF without the deprecated 'optimize' parameter
-images[0].save('pillow_imagedraw.gif',
+images[0].save("pillow_imagedraw.gif",
                save_all=True,
                append_images=images[1:],
                duration=10,
